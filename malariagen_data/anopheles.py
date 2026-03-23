@@ -130,15 +130,11 @@ class AnophelesDataResource(
         gcs_region_urls: Mapping[str, str],
         major_version_number: int,
         major_version_path: str,
-        gff_gene_type: str,
-        gff_gene_name_attribute: str,
-        gff_default_attributes: Tuple[str, ...],
         tqdm_class,
         storage_options: Mapping,
         taxon_colors: Optional[Mapping[str, str]] = None,
         aim_species_colors: Optional[Mapping[str, str]] = None,
         virtual_contigs: Optional[Mapping[str, Sequence[str]]] = None,
-        gene_names: Optional[Mapping[str, str]] = None,
         inversion_tag_path: Optional[str] = None,
         unrestricted_use_only: Optional[bool] = None,
         surveillance_use_only: Optional[bool] = None,
@@ -158,9 +154,6 @@ class AnophelesDataResource(
             major_version_number=major_version_number,
             major_version_path=major_version_path,
             storage_options=storage_options,
-            gff_gene_type=gff_gene_type,
-            gff_gene_name_attribute=gff_gene_name_attribute,
-            gff_default_attributes=gff_default_attributes,
             cohorts_analysis=cohorts_analysis,
             aim_analysis=aim_analysis,
             aim_metadata_dtype=aim_metadata_dtype,
@@ -176,7 +169,6 @@ class AnophelesDataResource(
             taxon_colors=taxon_colors,
             aim_species_colors=aim_species_colors,
             virtual_contigs=virtual_contigs,
-            gene_names=gene_names,
             inversion_tag_path=inversion_tag_path,
             unrestricted_use_only=unrestricted_use_only,
             surveillance_use_only=surveillance_use_only,
@@ -685,9 +677,7 @@ class AnophelesDataResource(
             fig2.show(renderer=renderer)
             fig3.show(renderer=renderer)
             fig4.show(renderer=renderer)
-            return None
-        else:
-            return (fig1, fig2, fig3, fig4)
+        return (fig1, fig2, fig3, fig4)
 
     @_check_types
     @doc(
@@ -1008,9 +998,7 @@ class AnophelesDataResource(
 
         if show:  # pragma: no cover
             bokeh.plotting.show(fig)
-            return None
-        else:
-            return fig
+        return fig
 
     @_check_types
     @doc(
@@ -1111,9 +1099,7 @@ class AnophelesDataResource(
 
         if show:  # pragma: no cover
             bokeh.plotting.show(fig)
-            return None
-        else:
-            return fig
+        return fig
 
     @doc(
         summary="Run and plot iHS GWSS data.",
@@ -1218,9 +1204,7 @@ class AnophelesDataResource(
 
         if show:  # pragma: no cover
             bokeh.plotting.show(fig)
-            return None
-        else:
-            return fig
+        return fig
 
     @_check_types
     @doc(
@@ -1540,9 +1524,7 @@ class AnophelesDataResource(
 
         if show:  # pragma: no cover
             bokeh.plotting.show(fig)
-            return None
-        else:
-            return fig
+        return fig
 
     @_check_types
     @doc(

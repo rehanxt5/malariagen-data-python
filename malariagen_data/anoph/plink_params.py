@@ -24,6 +24,7 @@ out: TypeAlias = Annotated[
     will be written as ``{output_dir}/{out}.bed``, ``{output_dir}/{out}.bim``,
     and ``{output_dir}/{out}.fam``. If not provided, a default prefix is
     generated from the SNP selection parameters (region, n_snps,
-    min_minor_ac, max_missing_an, thin_offset , and _hash_params).
+    min_minor_ac, max_missing_an, thin_offset).
+
     """,
 ]
